@@ -1,4 +1,4 @@
-# tiny-artblocks
+# tiny-artblocks-ts
 
 A starter kit for tiny and robust [ArtBlocks](https://artblocks.io/) artworks with TypeScript.
 
