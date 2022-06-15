@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "lib": ["dom"],
+    "typeRoots": ["tool/types", "node_modules/@types"],
+    "esModuleInterop": true,
+    "strict": false
+  }
+}

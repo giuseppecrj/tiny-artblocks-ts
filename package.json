@@ -1,0 +1,34 @@
+{
+  "name": "tiny-artblocks-ts",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "license": "MIT",
+  "author": {
+    "name": "Giuseppe Rodriguez",
+    "email": "giuseppecrj@gmail.com",
+    "url": "https://github.com/giuseppecrj"
+  },
+  "scripts": {
+    "start": "ts-node tool/dev.ts --dev",
+    "inspect": "ts-node tool/dev.ts --inspect",
+    "build": "ts-node tool/dev.ts"
+  },
+  "devDependencies": {
+    "@open-wc/building-rollup": "^2.0.1",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@rollup/plugin-typescript": "^8.3.3",
+    "acorn": "^8.2.4",
+    "acorn-walk": "^8.1.0",
+    "babel-minify": "^0.5.1",
+    "colorette": "^1.2.2",
+    "deepmerge": "^4.2.2",
+    "live-server": "^1.2.1",
+    "pretty-bytes": "^5.6.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.50.2",
+    "terser": "^5.7.0",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.3"
+  }
+}
