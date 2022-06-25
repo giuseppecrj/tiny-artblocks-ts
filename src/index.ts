@@ -1,45 +1,27 @@
-import sketch from "./sketch";
-import * as random from "./util/random";
+import { preload, setup, update, draw, windowResized } from "./sketch";
 
-// See if tokenData exists from ArtBlocks input
-// It may come in as object or string depending on context
+/**
+ * State
+ */
 
-let hash =
-  typeof tokenData !== "undefined"
-    ? typeof tokenData === "string"
-      ? tokenData
-      : tokenData.hash
-    : random.getRandomHash();
+let state = {};
 
-export default (() => {
-  let W = window,
-    D = document;
-  const canvas = D.body.appendChild(D.createElement("canvas"));
-  const context = canvas.getContext("2d");
+/**
+ * Lifecycle
+ */
 
-  let render;
-  let width, height, pixelRatio;
+window.preload = preload;
+window.update = update;
 
-  const draw = () => {
-    context.save();
-    context.scale(pixelRatio, pixelRatio);
-    render(context, width, height);
-    context.restore();
-  };
+window.setup = () => {
+  setup(state);
+};
 
-  const resize = () => {
-    width = W.innerWidth;
-    height = W.innerHeight;
-    pixelRatio = W.devicePixelRatio;
-    canvas.width = ~~(width * pixelRatio);
-    canvas.height = ~~(height * pixelRatio);
-    canvas.style.width = `${width}px`;
-    canvas.style.height = `${height}px`;
-    if (render) draw();
-  };
+window.draw = () => {
+  update(state);
+  draw(state);
+};
 
-  W.addEventListener("resize", resize);
-  resize();
-  render = sketch(hash);
-  draw();
-})();
+window.windowResized = () => {
+  windowResized(state);
+};
